@@ -1,5 +1,6 @@
 ﻿using HelpDesk.Migrations;
 using HelpDesk.Models;
+using HelpDesk.Repositorios.Chamados;
 using HelpDesk.Repositorios.Informacoes;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +9,12 @@ namespace HelpDesk.Controllers
     public class CriarChamadoController : Controller
     {
         private readonly IChamadoInformacoesRepositorio _chamadoInformacoesRepositorio;
+        private readonly IChamadoRepositorio _chamadoRepositorio; 
 
-        public CriarChamadoController(IChamadoInformacoesRepositorio chamadoInformacoesRepositorio)
+        public CriarChamadoController(IChamadoInformacoesRepositorio chamadoInformacoesRepositorio, IChamadoRepositorio chamadoRepositorio)
         {
             _chamadoInformacoesRepositorio = chamadoInformacoesRepositorio;
+            _chamadoRepositorio = chamadoRepositorio;
         }
 
         public IActionResult Index()
@@ -31,6 +34,13 @@ namespace HelpDesk.Controllers
 
 
             return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Criar(ChamadoModel chamado)
+        {
+            _chamadoRepositorio.CriarChamado(chamado);
+            return RedirectToAction("Index", "Home");
         }
 
     }

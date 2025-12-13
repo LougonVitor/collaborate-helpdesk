@@ -1,4 +1,5 @@
 using HelpDesk.Data;
+using HelpDesk.Repositorios.Chamados;
 using HelpDesk.Repositorios.Informacoes;
 using HelpDesk.Repositorios.Usuario;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ builder.Services.AddDbContext<BancoContext>(o => o.UseMySql(stringDeConecao, Ser
 
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<IChamadoInformacoesRepositorio, ChamadoInformacoesRepositorio>();
+builder.Services.AddScoped<IChamadoRepositorio, ChamadoRepositorio>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
