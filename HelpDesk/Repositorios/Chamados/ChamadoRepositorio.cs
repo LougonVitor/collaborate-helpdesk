@@ -1,4 +1,5 @@
 ﻿using HelpDesk.Data;
+using HelpDesk.Helper;
 using HelpDesk.Models;
 
 namespace HelpDesk.Repositorios.Chamados
@@ -6,10 +7,12 @@ namespace HelpDesk.Repositorios.Chamados
     public class ChamadoRepositorio : IChamadoRepositorio
     {
         private readonly BancoContext _bancoContext;
+        private readonly ISessionUser _sessionUser;
 
-        public ChamadoRepositorio(BancoContext BancoContext)
+        public ChamadoRepositorio(BancoContext BancoContext, ISessionUser sessionUser)
         {
             _bancoContext = BancoContext;
+            _sessionUser = sessionUser;
         }
 
         public ChamadoModel CriarChamado(ChamadoModel chamado)

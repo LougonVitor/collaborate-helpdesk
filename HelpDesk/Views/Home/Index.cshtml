@@ -2,6 +2,38 @@
     ViewData["Title"] = "Pagina inicial";
 }
 
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+        <div class="toast show toast-shor" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Error</strong>
+                <small>Agora</small>
+                <button type="button" class="btn-close" aria-label="Fechar"></button>
+            </div>
+            <div class="toast-body">
+                @TempData["MensagemErro"]
+            </div>
+        </div>
+    </div>
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+        <div class="toast show toast-shor" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Acao concluda com sucesso</strong>
+                <small>Agora</small>
+                <button type="button" class="btn-close" aria-label="Fechar"></button>
+            </div>
+            <div class="toast-body">
+                @TempData["MensagemSucesso"]
+            </div>
+        </div>
+    </div>
+}
+
 <div class="text-center">
     <h1 class="display-4">Pagina inical</h1>
   

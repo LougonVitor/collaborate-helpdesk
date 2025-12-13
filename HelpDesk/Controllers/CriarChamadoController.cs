@@ -27,9 +27,11 @@ namespace HelpDesk.Controllers
 
             var model = new CriarChamadoModel
             {
+                Chamado = new ChamadoModel(),
                 ListaTipo = Tipos,
                 ListaCategoria = Categorias,
                 ListaLocalizacao = Localizacao
+                
             };
 
 
@@ -37,11 +39,35 @@ namespace HelpDesk.Controllers
         }
 
         [HttpPost]
-        public IActionResult Criar(ChamadoModel chamado)
+        public IActionResult Criar(CriarChamadoModel model)
         {
-            _chamadoRepositorio.CriarChamado(chamado);
-            return RedirectToAction("Index", "Home");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _chamadoRepositorio.CriarChamado(model.Chamado);
+
+                    TempData["MensagemSucesso"] = "Chamado criado com sucesso";
+                    return RedirectToAction("Index", "Home");
+                }
+
+                model.ListaTipo = _chamadoInformacoesRepositorio.ListarTipos();
+                model.ListaCategoria = _chamadoInformacoesRepositorio.ListarCategoria();
+                model.ListaLocalizacao = _chamadoInformacoesRepositorio.ListarLocalizacao();
+
+                TempData["MensagemErro"] = "Preencha todos os campos corretamente";
+
+                return View("Index", model);
+
+                
+            }
+            catch (Exception err)
+            {
+                TempData["MensagemErro"] = $"Ops, algo deu errado: {err.Message}";
+                return RedirectToAction("Index");
+            }
         }
+
 
     }
 }
