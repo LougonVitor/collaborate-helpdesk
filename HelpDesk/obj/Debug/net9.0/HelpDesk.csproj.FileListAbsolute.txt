@@ -257,3 +257,4 @@ C:\Users\figue\Meus projetos\HelpDesk\HelpDesk\obj\Debug\net9.0\HelpDesk.genrunt
 C:\Users\figue\Meus projetos\HelpDesk\HelpDesk\obj\Debug\net9.0\ref\HelpDesk.dll
 C:\Users\figue\Meus projetos\HelpDesk\HelpDesk\obj\Debug\net9.0\compressed\k0gpxespf0-fpsijipki6.gz
 C:\Users\figue\Meus projetos\HelpDesk\HelpDesk\obj\Debug\net9.0\compressed\8cn1iia1sw-hajr30ufgj.gz
+C:\Users\figue\Meus projetos\HelpDesk\HelpDesk\obj\Debug\net9.0\HelpDesk.sourcelink.json

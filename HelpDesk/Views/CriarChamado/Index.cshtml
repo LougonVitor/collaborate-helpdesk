@@ -16,41 +16,51 @@
             <label class="form-label">Tipo</label>
             <select class="form-select form-select-sm" id="Tipo">
                 <option value="@TipoEnum.None" disabled selected>-----</option>
-                <option value="@TipoEnum.Problema">Problema</option>
-                <option value="@TipoEnum.Requisicao">Requisicao</option>
-                <option value="@TipoEnum.Melhoria">Melhoria</option>
-                <option value="@TipoEnum.Acesso">Acesso</option>
+                @if(Model.ListaTipo != null)
+                {
+                    foreach(TipoModel tipo in Model.ListaTipo)
+                    {
+                        <option value="@tipo.Tipo">@tipo.Tipo</option>
+                    }
+                }
             </select>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Categoria</label>
             <select class="form-select form-select-sm" id="Categoria">
-                <option value="@TipoEnum.None" disabled selected>-----</option>
-                <option value="@CategoriaEnum.ComputadorNotebook">Computador / Notebook</option>
-                <option value="@CategoriaEnum.Impressora">Impressora</option>
-                <option value="@CategoriaEnum.ProgramasDiversos">Programas Diversos</option>
-                <option value="@CategoriaEnum.Internet">Internet</option>
-                <option value="@CategoriaEnum.Email">Email</option>
+                <option value="@CategoriaEnum.None" disabled selected>-----</option>
+                @if (Model.ListaCategoria != null)
+                {
+                    foreach (CategoriaModel categoria in Model.ListaCategoria)
+                    {
+                        <option value="@categoria.Categoria">@categoria.Categoria</option>
+                    }
+                }
             </select>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Urgência</label>
             <select class="form-select form-select-sm">
-                <option>Baixa</option>
-                <option>Média</option>
-                <option>Alta</option>
+                <option value="@UrgenciaEnum.None" disabled selected>-----</option>
+                <option value="@UrgenciaEnum.Baixa">Baixa</option>
+                <option value="@UrgenciaEnum.Media">Média</option>
+                <option value="@UrgenciaEnum.Alta">Alta</option>
             </select>
         </div>
 
         <div class="mb-3">
             <label class="form-label">Localização</label>
             <select class="form-select form-select-sm">
-                <option disabled selected>-----</option>
-                <option>Sala 01</option>
-                <option>Sala 02</option>
-                <option>Recepção</option>
+                <option value="@LocalizacaoEnum.None" disabled selected>-----</option>
+                @if (Model.ListaLocalizacao != null)
+                {
+                    foreach (LocalizacaoModel localizacao in Model.ListaLocalizacao)
+                    {
+                        <option value="@localizacao.Localizacao">@localizacao.Localizacao</option>
+                    }
+                }
             </select>
         </div>
 

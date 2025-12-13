@@ -1,4 +1,5 @@
 using HelpDesk.Data;
+using HelpDesk.Repositorios.Informacoes;
 using HelpDesk.Repositorios.Usuario;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ var stringDeConecao = builder.Configuration.GetConnectionString("DataBase");
 builder.Services.AddDbContext<BancoContext>(o => o.UseMySql(stringDeConecao, ServerVersion.AutoDetect(stringDeConecao)));
 
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+builder.Services.AddScoped<IChamadoInformacoesRepositorio, ChamadoInformacoesRepositorio>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
