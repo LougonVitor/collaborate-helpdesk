@@ -3,11 +3,11 @@ using Newtonsoft.Json;
 
 namespace HelpDesk.Helper
 {
-    public class Session : ISession
+    public class Session : ISessionUser
     {
-        private readonly HttpContextAccessor _httpContext;
+        private readonly IHttpContextAccessor _httpContext;
 
-        public Session(HttpContextAccessor httpContext)
+        public Session(IHttpContextAccessor httpContext)
         {
            _httpContext = httpContext;     
         }

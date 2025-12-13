@@ -15,7 +15,7 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<IChamadoInformacoesRepositorio, ChamadoInformacoesRepositorio>();
 builder.Services.AddScoped<IChamadoRepositorio, ChamadoRepositorio>();
-builder.Services.AddScoped<HelpDesk.Helper.ISession, Session>();
+builder.Services.AddScoped<ISessionUser, Session>();
 
 builder.Services.AddSession(o =>
 {
