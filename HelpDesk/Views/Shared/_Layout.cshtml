@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿  
+@{
+    var httpContextAccessor = new HttpContextAccessor();
+    var helper = new HelpDesk.Helper.Session(httpContextAccessor);
+    var usuario = helper.BuscarSessao();
+}
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -29,17 +37,31 @@
 
                         <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-semibold"
                              style="width:36px; height:36px;">
-                            GC
+                            @{
+                                string iniciais = "";
+
+                                if (usuario != null && !string.IsNullOrWhiteSpace(usuario.Nome))
+                                {
+                                    var partes = usuario.Nome
+                                    .Trim()
+                                    .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                                    if (partes.Length >= 1)
+                                        iniciais += partes[0][0];
+
+                                    if (partes.Length >= 2)
+                                        iniciais += partes[1][0];
+                                }
+                            }
+                            @iniciais.ToUpper()
                         </div>
 
-                        <span class="fw-semibold text-dark">Gabriel</span>
+
+                        <span class="fw-semibold text-dark">@usuario.Login</span>
                     </a>
 
 
                     <ul class="dropdown-menu dropdown-menu-end shadow">
-                        <li><a class="dropdown-item" href="#">Tecnico</a></li>
-                        <li><a class="dropdown-item" href="#">Entidade Raiz</a></li>
-                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item text-danger" asp-action="remover" asp-controller="Login">Sair</a></li>
                     </ul>
                 </div>

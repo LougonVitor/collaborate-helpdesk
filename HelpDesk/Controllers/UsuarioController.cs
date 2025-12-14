@@ -48,7 +48,6 @@ namespace HelpDesk.Controllers
                 if (ModelState.IsValid)
                 {
                     _usuarioRepositorio.CriarUsuario(usuario);
-                    _sessaoUser.CriarSessao(usuario);
                     TempData["MensagemSucesso"] = "Usuario Criado com sucesso";
                     return RedirectToAction("Index");
 
