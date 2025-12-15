@@ -204,9 +204,8 @@ textarea {
 }
 
 .status-open {
-    background-color: #00e676; /* verde bem vivo */
+    background-color: #00e676; 
     color: #0f3d1f;
-    box-shadow: 0 0 6px rgba(0, 230, 118, 0.9);
 }
 
 .status-text {
@@ -222,7 +221,6 @@ textarea {
 .status-open-outline {
     border: 2px solid #00e676; 
     background-color: transparent;
-    box-shadow: 0 0 4px rgba(0, 230, 118, 0.6);
 }
 
 
@@ -240,5 +238,4 @@ textarea {
 .status-feito-text {
     color: black;
 }
-
 

@@ -14,7 +14,7 @@
     <h1>Chamados</h1>
 </div>
 
-<table class="table">
+<table class="table" id="chamados">
     <thead>
         <tr>
             <th scope="col">ID</th>
@@ -24,7 +24,6 @@
             <th scope="col">REQUERENTE</th>
             <th scope="col">LOCALIZACAO</th>
             <th scope="col">ATRIBUIDO</th>
-            <th scope="col">TIPO</th>
             <th scope="col">CATEGORIA</th>
             <th scope="col">PRIORIADE</th>
             <th scope="col">ULTIMA ATUALIZACAO</th>
@@ -38,7 +37,7 @@
                     <tr>
                         <th scope="row">@chamado.Id</th>
                         <td>@chamado.Titulo</td>
-                        <td>@chamado.DataAbertura.ToString("dd/MM/yyyy - HH:mm")</td>
+                        <td>@chamado.DataAbertura</td>
                         <td>
                         @if (chamado.Status == HelpDesk.Enums.StatusEnum.aberto)
                         {
@@ -77,8 +76,7 @@
                         </td>
                         <td>@chamado.UsuarioLogin</td>
                         <td>@chamado.Localizacao</td>
-                        <td>Gabriel campos</td>
-                        <td>@chamado.Tipo</td>
+                        <td></td>
                         <td>@chamado.Categoria</td>
                         <td>
                             @if(chamado.Urgencia == HelpDesk.Enums.UrgenciaEnum.Baixa)
@@ -104,3 +102,6 @@
         
     </tbody>
 </table>
+
+<br>
+<br>
