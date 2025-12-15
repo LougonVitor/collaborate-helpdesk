@@ -1,3 +1,4 @@
+wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -123,7 +124,6 @@ wwwroot\wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\site.css
 C:\Users\figue\Meus projetos\HelpDesk\HelpDesk\wwwroot\css\site.css
 C:\Users\figue\Meus projetos\HelpDesk\HelpDesk\wwwroot\favicon.ico
 C:\Users\figue\Meus projetos\HelpDesk\HelpDesk\wwwroot\js\site.js
