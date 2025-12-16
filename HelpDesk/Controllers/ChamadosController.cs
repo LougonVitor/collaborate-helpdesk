@@ -18,5 +18,10 @@ namespace HelpDesk.Controllers
             List<ChamadoModel> Chamados = _chamadoRepositorio.BuscarChamados(); 
             return View(Chamados);
         }
+
+        public IActionResult Detalhes()
+        {
+            return View();
+        }
     }
 }

@@ -34,8 +34,10 @@
             {
                 foreach(ChamadoModel chamado in Model)
                 {
-                    <tr>
-                        <th scope="row">@chamado.Id</th>
+                <tr style="cursor:pointer"
+                    onclick="window.location='@Url.Action("Detalhes", "Chamados", new { id = chamado.Id })'">
+                    
+                    <th scope="row">@chamado.Id</th>
                         <td>@chamado.Titulo</td>
                         <td>@chamado.DataAbertura</td>
                         <td>

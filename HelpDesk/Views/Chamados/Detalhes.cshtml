@@ -1,0 +1,131 @@
+﻿@{
+    ViewData["Title"] = "Chamado";
+}
+
+<!-- HEADER FIXO -->
+    <div class="container-fluid px-3 py-2 text-center" style="border-bottom: 1px solid black;">
+        <input type="text"
+               class="form-control fw-semibold border-0 p-0 fs-5 text-center"
+               value="Atualização de acesso ao e-mail institucional."
+               readonly />
+    </div>
+
+<!-- CONTEÚDO -->
+<div class="container-fluid"
+     style="padding-top:70px; padding-bottom:70px;">
+
+    <div class="row g-3">
+
+        <!-- COLUNA ESQUERDA -->
+        <div class="col-lg-8">
+
+            <div class="border rounded bg-white">
+
+                <!-- HEADER INTERNO -->
+                <div class="d-flex align-items-center px-3 py-2 border-bottom">
+                    <div class="rounded bg-success text-white fw-semibold
+                                d-flex align-items-center justify-content-center me-2"
+                         style="width:36px;height:36px;">
+                        AD
+                    </div>
+
+                    <small class="text-muted">
+                        Criado em:
+                        <i class="bi bi-clock ms-1"></i>
+                        06/05/2025 09:21
+                        por
+                        <span class="fw-semibold">Amabile de S. V. Nunes</span>
+                    </small>
+                </div>
+
+                <!-- TEXTO PRINCIPAL -->
+                <div class="px-3 py-3">
+                    <textarea class="form-control text-success"
+                              rows="16"
+                              readonly
+                              style="resize:none;">
+Preenchimento dos campos abaixo OBRIGATÓRIO:
+
+1. IP do computador: 10.0.26.34
+2. Ramal: 5624
+3. Nome Completo: Inara Junqueira de Castro Dardengo
+
+Descrição detalhada do problema: Atualizar o acesso à Dra. Inara para utilização do e-mail institucional.
+
+E-mail: coordenacao.maternidade@hifa.org.br
+Senha: Hif@2025
+
+Orientá-la para mudança de senha após o primeiro acesso, criação de reunião online pelo Teams.
+
+Cordialmente,
+                    </textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- LATERAL DIREITA COM SCROLL -->
+        <div class="col-lg-4">
+            <div class="border rounded bg-white p-3"
+                 style="height: calc(100vh - 140px); overflow-y: auto;">
+
+                <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-info-circle me-2 text-muted"></i>
+                    <span class="fw-semibold text-muted">Chamado</span>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label small text-muted">Data de abertura</label>
+                    <input class="form-control" value="06-05-2025 09:21:01" readonly />
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label small text-muted">Tipo</label>
+                    <select class="form-select">
+                        <option selected>Requisição</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label small text-muted">Categoria *</label>
+                    <select class="form-select">
+                        <option selected>EQUIPAMENTOS &gt; COMPUTADOR</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label small text-muted">Status</label>
+                    <select class="form-select text-success fw-semibold">
+                        <option selected>● Novo</option>
+                    </select>
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label small text-muted">Urgência</label>
+                    <select class="form-select">
+                        <option selected>Alta</option>
+                    </select>
+                </div>
+
+                <div class="mb-0">
+                    <label class="form-label small text-muted">Localização *</label>
+                    <input class="form-control"
+                           value="HIFA SUMARÉ > 2º ANDAR > PRESCRIÇÃO"
+                           readonly />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER FIXO -->
+<footer class="bg-white border-top fixed-bottom">
+    <div class="container-fluid px-3 py-2 d-flex justify-content-end">
+        <button class="btn btn-success fw-semibold px-4">
+            <i class="bi bi-reply-fill me-1"></i>
+            Responder
+        </button>
+    </div>
+</footer>
